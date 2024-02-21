@@ -9,9 +9,9 @@ function App() {
 
   return (
     <div className="bg-sky-100 flex justify-center items-center h-screen px-5">
-      <div className="flex flex-col items-center justify-between gap-4 p-4 bg-white rounded-lg shadow-lg w-96">
-        <div className="flex flex-col w-full">
-          <h1 className="text-2xl font-bold text-sky-800">Auth0 Login</h1>
+      <div className="flex flex-col items-center justify-between gap-4 p-4 bg-white rounded-lg shadow-lg w-full max-w-xl">
+        <div className="flex flex-col items-center w-full">
+          <h1 className="text-2xl font-bold text-sky-800 mb-5">Auth0 Login</h1>
 
           {error && (
             <div className="text-red-500">
@@ -28,9 +28,11 @@ function App() {
           {!error && !isLoading && (
             <>
               <LoginButton />
-              <LogOutButton />
 
               <Profile />
+              <div className="mt-5 w-full">
+                <LogOutButton />
+              </div>
             </>
           )}
         </div>

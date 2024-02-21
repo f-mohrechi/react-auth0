@@ -5,26 +5,24 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <article className="">
+      <article className="flex flex-col items-center">
         {user.picture && (
-          <img
-            className="w-20 h-20 rounded-full"
-            src={user.picture}
-            alt={user.name}
-          />
+          <div className="flex justify-center">
+            <img
+              className="w-20 h-20 rounded-full"
+              src={user.picture}
+              alt={user.name}
+            />
+          </div>
         )}
-
-        <h2>{user.name}</h2>
-
-        <ul>
-          {Object.keys(user).map((objKey, i) => {
-            return (
-              <li key={i}>
-                {objKey} : {user[objKey]}
-              </li>
-            );
-          })}
-        </ul>
+        <h2 className="text-xl font-medium my-2">{user.name}</h2>
+        {Object.keys(user).map((objKey, i) => {
+          return (
+            <p key={i} className="text-center">
+              {objKey} : {user[objKey]}
+            </p>
+          );
+        })}
       </article>
     )
   );
